@@ -1,33 +1,6 @@
 import axios from "axios";
 
-// window.open("https://sss.com", "_blank");
-
 export default function SearchPage({ videos }) {
-  //   const handleDownload = async (id) => {
-  //     const options = {
-  //       method: "GET",
-  //       url: "https://youtube-mp36.p.rapidapi.com/dl",
-  //       params: { id: id },
-  //       headers: {
-  //         "X-RapidAPI-Key": "d300cc5d28mshd1ac37cace93828p1f8c19jsnf4ac6506e256",
-  //         "X-RapidAPI-Host": "youtube-mp36.p.rapidapi.com",
-  //       },
-  //     };
-  //     try {
-  //       const videoId = id;
-  //       const response = await axios.request(options);
-  //       if (response.data.status === "processing") {
-  //         console.log("ĐANG XỬ LÍ");
-  //         await new Promise((resolve) => setTimeout(resolve, 2000));
-  //         await handleDownload(videoId);
-  //       } else {
-  //         window.open("http://facebook.com", "_blank");
-  //       }
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-
   return (
     <div>
       <div className="video-list">
@@ -39,7 +12,9 @@ export default function SearchPage({ videos }) {
               alt={video.title}
               className="video-thumbnail"
             />
-            <a href={`/download/${video.id}`}>Download Audio</a>
+            <a href={`/download/${video.id}?name=${video.title}`}>
+              Download Audio
+            </a>
           </div>
         ))}
       </div>
